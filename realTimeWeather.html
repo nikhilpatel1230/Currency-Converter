@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="🌤 Real-Time Weather" icon-name="utility:world">
+        <div class="slds-p-around_medium slds-grid slds-grid_vertical-align-center slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <lightning-input 
+                    label="City Name" 
+                    placeholder="Enter city e.g., New York" 
+                    value={city} 
+                    onchange={handleCityChange}
+                    class="city-input">
+                </lightning-input>
+            </div>
+        </div>
+
+        <template if:true={weather}>
+            <div class="slds-p-around_medium weather-card slds-text-align_center">
+                <img src={weather.icon} alt="Weather Icon" class="weather-icon"/>
+                <h2 class="slds-text-heading_medium">{city}</h2>
+                <p class="slds-text-heading_large">{weather.temp} °C</p>
+                <p class="slds-text-title_caps slds-text-color_weak">{weather.desc}</p>
+                <div class="slds-m-top_medium">
+                    <p><strong>💧 Humidity:</strong> {weather.humidity}%</p>
+                    <p><strong>💨 Wind:</strong> {weather.wind} m/s</p>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-around_medium">
+                ⚠️ {error}
+            </div>
+        </template>
+    </lightning-card>
+</template>

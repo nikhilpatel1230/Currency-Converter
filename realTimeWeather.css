@@ -1,0 +1,16 @@
+.weather-card {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.weather-icon {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.city-input lightning-input {
+    --slds-c-input-radius-border: 0.5rem;
+}
